@@ -17,6 +17,8 @@ export 'package:video_player_platform_interface/video_player_platform_interface.
 import 'src/closed_caption_file.dart';
 export 'src/closed_caption_file.dart';
 
+//Amir Mohammadi Video Player Edit
+
 /// The duration, current position, buffering state, error state and settings
 /// of a [VideoPlayerController].
 class VideoPlayerValue {
