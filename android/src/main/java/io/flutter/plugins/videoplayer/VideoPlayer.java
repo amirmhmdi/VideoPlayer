@@ -45,6 +45,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+//added my amir to reduce buffer size
+import com.google.android.exoplayer2.DefaultLoadControl;
 
 final class VideoPlayer {
   private static final String FORMAT_SS = "ss";
@@ -78,7 +80,9 @@ final class VideoPlayer {
     this.textureEntry = textureEntry;
 
     TrackSelector trackSelector = new DefaultTrackSelector();
-    exoPlayer = ExoPlayerFactory.newSimpleInstance(context, trackSelector);
+    //added by amir to reduce buffer size
+    DefaultLoadControl loadControl = new DefaultLoadControl.Builder().setBufferDurationsMs(32*1024, 64*1024, 1024, 1024).createDefaultLoadControl();
+    exoPlayer = ExoPlayerFactory.newSimpleInstance(context, trackSelector , loadControl );
 
     Uri uri = Uri.parse(dataSource);
 
