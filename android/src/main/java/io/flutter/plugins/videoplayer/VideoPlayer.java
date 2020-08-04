@@ -70,9 +70,9 @@ final class VideoPlayer {
 
 
   // Minimum Video you want to buffer while Playing
-  public static final int MIN_BUFFER_DURATION = 2000;
+  public static final int MIN_BUFFER_DURATION = 3000;
   // Max Video you want to buffer during PlayBack
-  public static final int MAX_BUFFER_DURATION = 5000;
+  public static final int MAX_BUFFER_DURATION = 3000;
   // Min Video you want to buffer before start Playing it
   public static final int MIN_PLAYBACK_START_BUFFER = 2000;
   // Min video You want to buffer when user resumes video
@@ -102,7 +102,7 @@ final class VideoPlayer {
                             MAX_BUFFER_DURATION,
                             MIN_PLAYBACK_START_BUFFER,
                             MIN_PLAYBACK_RESUME_BUFFER
-                      ).setTargetBufferBytes(-1)
+                      ).setTargetBufferBytes(100)
                       .setPrioritizeTimeOverSizeThresholds(true)
                       .createDefaultLoadControl();
 
@@ -200,9 +200,26 @@ final class VideoPlayer {
       }
     });
 
-    surface = new Surface(textureEntry.surfaceTexture());
-    exoPlayer.setVideoSurface(surface);
-    setAudioAttributes(exoPlayer);
+    try {
+      surface = new Surface(textureEntry.surfaceTexture());
+      exoPlayer.setVideoSurface(surface);
+      setAudioAttributes(exoPlayer);
+    } catch (Exception e) {
+      
+    }
+    
+
+    while (surface == null) {
+      System.out.println("surface == null++++++++++++++++++++++++");
+      try {
+        surface = new Surface(textureEntry.surfaceTexture());
+        exoPlayer.setVideoSurface(surface);
+        setAudioAttributes(exoPlayer);
+      } catch (Exception e) {
+
+      }
+      
+    }
 
     exoPlayer.addListener(new EventListener() {
 

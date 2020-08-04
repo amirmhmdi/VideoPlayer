@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Aug 04 11:23:30 IRDT 2020
+#Tue Aug 04 16:26:51 IRDT 2020
 4.path=lib/x86/libflutter.so
 8.set=NATIVE_RESOURCE
 6.path=flutter_assets/assets/Butterfly-209.mp4
