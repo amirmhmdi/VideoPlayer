@@ -47,6 +47,8 @@ import java.util.List;
 import java.util.Map;
 //added my amir to reduce buffer size
 import com.google.android.exoplayer2.DefaultLoadControl;
+import com.google.android.exoplayer2.upstream.DefaultAllocator;
+
 
 final class VideoPlayer {
   private static final String FORMAT_SS = "ss";
@@ -66,6 +68,16 @@ final class VideoPlayer {
 
   private boolean isInitialized = false;
 
+
+  // Minimum Video you want to buffer while Playing
+  public static final int MIN_BUFFER_DURATION = 2000;
+  // Max Video you want to buffer during PlayBack
+  public static final int MAX_BUFFER_DURATION = 5000;
+  // Min Video you want to buffer before start Playing it
+  public static final int MIN_PLAYBACK_START_BUFFER = 2000;
+  // Min video You want to buffer when user resumes video
+  public static final int MIN_PLAYBACK_RESUME_BUFFER = 2000;
+
   VideoPlayer(
       Context context,
       EventChannel eventChannel,
@@ -78,12 +90,26 @@ final class VideoPlayer {
       Result result) {
     this.eventChannel = eventChannel;
     this.textureEntry = textureEntry;
+    System.out.println("\nJAAAAAAAAAAAAAAAAAAAAAAAVA\n");
 
     TrackSelector trackSelector = new DefaultTrackSelector();
     //added by amir to reduce buffer size
-    DefaultLoadControl loadControl = new DefaultLoadControl.Builder().setBufferDurationsMs(32*1024, 64*1024, 1024, 1024).createDefaultLoadControl();
-    exoPlayer = ExoPlayerFactory.newSimpleInstance(context, trackSelector , loadControl );
+    DefaultLoadControl loadControl = 
+                new DefaultLoadControl.Builder()
+                      .setAllocator(new DefaultAllocator(true, 16))
+                      .setBufferDurationsMs(
+                            MIN_BUFFER_DURATION,
+                            MAX_BUFFER_DURATION,
+                            MIN_PLAYBACK_START_BUFFER,
+                            MIN_PLAYBACK_RESUME_BUFFER
+                      ).setTargetBufferBytes(-1)
+                      .setPrioritizeTimeOverSizeThresholds(true)
+                      .createDefaultLoadControl();
 
+    System.out.println("loadControl");
+    System.out.println(loadControl.toString());
+    exoPlayer = ExoPlayerFactory.newSimpleInstance(context, trackSelector , loadControl );
+    System.out.println("exoPlayer123");
     Uri uri = Uri.parse(dataSource);
 
     DataSource.Factory dataSourceFactory;
@@ -117,8 +143,8 @@ final class VideoPlayer {
     return scheme.equals("http") || scheme.equals("https");
   }
 
-  private MediaSource buildMediaSource(
-      Uri uri, DataSource.Factory mediaDataSourceFactory, String formatHint, Context context) {
+  private MediaSource buildMediaSource(Uri uri, DataSource.Factory mediaDataSourceFactory, String formatHint,
+      Context context) {
     int type;
     if (formatHint == null) {
       type = Util.inferContentType(uri.getLastPathSegment());
@@ -143,74 +169,66 @@ final class VideoPlayer {
     }
     switch (type) {
       case C.TYPE_SS:
-        return new SsMediaSource.Factory(
-                new DefaultSsChunkSource.Factory(mediaDataSourceFactory),
-                new DefaultDataSourceFactory(context, null, mediaDataSourceFactory))
-            .createMediaSource(uri);
+        return new SsMediaSource.Factory(new DefaultSsChunkSource.Factory(mediaDataSourceFactory),
+            new DefaultDataSourceFactory(context, null, mediaDataSourceFactory)).createMediaSource(uri);
       case C.TYPE_DASH:
-        return new DashMediaSource.Factory(
-                new DefaultDashChunkSource.Factory(mediaDataSourceFactory),
-                new DefaultDataSourceFactory(context, null, mediaDataSourceFactory))
-            .createMediaSource(uri);
+        return new DashMediaSource.Factory(new DefaultDashChunkSource.Factory(mediaDataSourceFactory),
+            new DefaultDataSourceFactory(context, null, mediaDataSourceFactory)).createMediaSource(uri);
       case C.TYPE_HLS:
         return new HlsMediaSource.Factory(mediaDataSourceFactory).createMediaSource(uri);
       case C.TYPE_OTHER:
         return new ExtractorMediaSource.Factory(mediaDataSourceFactory)
-            .setExtractorsFactory(new DefaultExtractorsFactory())
-            .createMediaSource(uri);
-      default:
-        {
-          throw new IllegalStateException("Unsupported type: " + type);
-        }
+            .setExtractorsFactory(new DefaultExtractorsFactory()).createMediaSource(uri);
+      default: {
+        throw new IllegalStateException("Unsupported type: " + type);
+      }
     }
   }
 
-  private void setupVideoPlayer(
-      EventChannel eventChannel, TextureRegistry.SurfaceTextureEntry textureEntry, Result result) {
+  private void setupVideoPlayer(EventChannel eventChannel, TextureRegistry.SurfaceTextureEntry textureEntry,
+      Result result) {
 
-    eventChannel.setStreamHandler(
-        new EventChannel.StreamHandler() {
-          @Override
-          public void onListen(Object o, EventChannel.EventSink sink) {
-            eventSink.setDelegate(sink);
-          }
+    eventChannel.setStreamHandler(new EventChannel.StreamHandler() {
+      @Override
+      public void onListen(Object o, EventChannel.EventSink sink) {
+        eventSink.setDelegate(sink);
+      }
 
-          @Override
-          public void onCancel(Object o) {
-            eventSink.setDelegate(null);
-          }
-        });
+      @Override
+      public void onCancel(Object o) {
+        eventSink.setDelegate(null);
+      }
+    });
 
     surface = new Surface(textureEntry.surfaceTexture());
     exoPlayer.setVideoSurface(surface);
     setAudioAttributes(exoPlayer);
 
-    exoPlayer.addListener(
-        new EventListener() {
+    exoPlayer.addListener(new EventListener() {
 
-          @Override
-          public void onPlayerStateChanged(final boolean playWhenReady, final int playbackState) {
-            if (playbackState == Player.STATE_BUFFERING) {
-              sendBufferingUpdate();
-            } else if (playbackState == Player.STATE_READY) {
-              if (!isInitialized) {
-                isInitialized = true;
-                sendInitialized();
-              }
-            } else if (playbackState == Player.STATE_ENDED) {
-              Map<String, Object> event = new HashMap<>();
-              event.put("event", "completed");
-              eventSink.success(event);
-            }
+      @Override
+      public void onPlayerStateChanged(final boolean playWhenReady, final int playbackState) {
+        if (playbackState == Player.STATE_BUFFERING) {
+          sendBufferingUpdate();
+        } else if (playbackState == Player.STATE_READY) {
+          if (!isInitialized) {
+            isInitialized = true;
+            sendInitialized();
           }
+        } else if (playbackState == Player.STATE_ENDED) {
+          Map<String, Object> event = new HashMap<>();
+          event.put("event", "completed");
+          eventSink.success(event);
+        }
+      }
 
-          @Override
-          public void onPlayerError(final ExoPlaybackException error) {
-            if (eventSink != null) {
-              eventSink.error("VideoError", "Video player had error " + error, null);
-            }
-          }
-        });
+      @Override
+      public void onPlayerError(final ExoPlaybackException error) {
+        if (eventSink != null) {
+          eventSink.error("VideoError", "Video player had error " + error, null);
+        }
+      }
+    });
 
     Map<String, Object> reply = new HashMap<>();
     reply.put("textureId", textureEntry.id());
@@ -221,7 +239,8 @@ final class VideoPlayer {
     Map<String, Object> event = new HashMap<>();
     event.put("event", "bufferingUpdate");
     List<? extends Number> range = Arrays.asList(0, exoPlayer.getBufferedPosition());
-    // iOS supports a list of buffered ranges, so here is a list with a single range.
+    // iOS supports a list of buffered ranges, so here is a list with a single
+    // range.
     event.put("values", Collections.singletonList(range));
     eventSink.success(event);
   }
@@ -229,8 +248,7 @@ final class VideoPlayer {
   @SuppressWarnings("deprecation")
   private static void setAudioAttributes(SimpleExoPlayer exoPlayer) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      exoPlayer.setAudioAttributes(
-          new AudioAttributes.Builder().setContentType(C.CONTENT_TYPE_MOVIE).build());
+      exoPlayer.setAudioAttributes(new AudioAttributes.Builder().setContentType(C.CONTENT_TYPE_MOVIE).build());
     } else {
       exoPlayer.setAudioStreamType(C.STREAM_TYPE_MUSIC);
     }
@@ -305,18 +323,14 @@ final class VideoPlayer {
     private final long maxFileSize, maxCacheSize;
     private static SimpleCache downloadCache;
 
-    CacheDataSourceFactory(
-        Context context,
-        long maxCacheSize,
-        long maxFileSize,
+    CacheDataSourceFactory(Context context, long maxCacheSize, long maxFileSize,
         DataSource.Factory upstreamDataSource) {
       super();
       this.context = context;
       this.maxCacheSize = maxCacheSize;
       this.maxFileSize = maxFileSize;
       DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
-      defaultDatasourceFactory =
-          new DefaultDataSourceFactory(this.context, bandwidthMeter, upstreamDataSource);
+      defaultDatasourceFactory = new DefaultDataSourceFactory(this.context, bandwidthMeter, upstreamDataSource);
     }
 
     @Override
@@ -327,13 +341,9 @@ final class VideoPlayer {
         downloadCache = new SimpleCache(new File(context.getCacheDir(), "video"), evictor);
       }
 
-      return new CacheDataSource(
-          downloadCache,
-          defaultDatasourceFactory.createDataSource(),
-          new FileDataSource(),
+      return new CacheDataSource(downloadCache, defaultDatasourceFactory.createDataSource(), new FileDataSource(),
           new CacheDataSink(downloadCache, maxFileSize),
-          CacheDataSource.FLAG_BLOCK_ON_CACHE | CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR,
-          null);
+          CacheDataSource.FLAG_BLOCK_ON_CACHE | CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR, null);
     }
   }
 }

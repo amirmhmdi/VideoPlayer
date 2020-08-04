@@ -1,0 +1,182 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+MERGED from [:video_player] /home/amir/development/VideoPlayer/example/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:e2e] /home/amir/development/VideoPlayer/example/build/e2e/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:video_player_web] /home/amir/development/VideoPlayer/example/build/video_player_web/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/02c107d4c4df34a0e6813d667c6a5b57/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/5900f64fca4216fb3438886c685fe99c/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/bc5320f6e4ea954b5e6a679761001302/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/4ad6b3bb7a3af43916c33ab1fbe38a46/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/c7fce76c70c1c0bea31510c8266e1c4d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/f28e5403cae781986b1aae4f37ef0b91/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/319b495517670e59f4fc0c8c7ca7a0f2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/73a44782065f9670e7e84265811836f5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/42aa1f12f57d01d15df068bc2c10a042/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/4bf1dcf603a13f7da150d8c90237a2c7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.test:rules:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/rules-1.2.0.aar/55cccf90936b43286d3d6dcc004a91db/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/espresso-core-3.2.0.aar/62bb3342677463dcb1ceabf82f3f5961/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test:runner:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/runner-1.2.0.aar/3da3b8277ec86c113e44421496924f3f/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/8f49a045bbd62e288eeb7006435eec4e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/bc751dba5334d91e8374154559d4c72b/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.test:monitor:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/monitor-1.2.0.aar/0f70a365cd8d51501d52125e6bc39132/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/917c5d444d005bd4caa283658a276ab7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-hls-2.9.6.aar/d0b286f0fa67d05938aad0be0e6ca5d1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-dash-2.9.6.aar/6e0df0a888d7032be7f6e47483870b78/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-smoothstreaming-2.9.6.aar/c78f66f42cb4e2baf0d3eb44087c22a2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-core-2.9.6.aar/4d57f87bc624f9cefaf3f6b73ba23336/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/espresso-idling-resource-3.2.0.aar/26a882636b5a11ce115acedd5f0f74f3/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+	package
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:2:3-50
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:1-37:12
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:3:3-65
+	android:name
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:3:20-62
+application
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:4:3-34:17
+MERGED from [androidx.core:core:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/f28e5403cae781986b1aae4f37ef0b91/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/f28e5403cae781986b1aae4f37ef0b91/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/bc751dba5334d91e8374154559d4c72b/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/bc751dba5334d91e8374154559d4c72b/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/f28e5403cae781986b1aae4f37ef0b91/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:6:5-41
+	android:icon
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:5:5-39
+	android:networkSecurityConfig
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:8:5-65
+	android:usesCleartextTraffic
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:9:5-40
+	android:name
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:7:5-53
+activity#io.flutter.plugins.videoplayerexample.EmbeddingV1Activity
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:11:5-22:16
+	android:launchMode
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:15:7-37
+	android:hardwareAccelerated
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:14:7-41
+	android:windowSoftInputMode
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:18:7-49
+	android:exported
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:13:7-30
+	android:configChanges
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:12:7-100
+	android:theme
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:17:7-41
+	android:name
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:16:7-42
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:19:7-21:31
+	android:value
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:21:9-29
+	android:name
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:20:9-74
+activity#io.flutter.plugins.videoplayerexample.MainActivity
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:23:5-33:16
+	android:hardwareAccelerated
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:25:7-41
+	android:windowSoftInputMode
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:28:7-49
+	android:configChanges
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:24:7-100
+	android:theme
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:27:7-41
+	android:name
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:26:7-35
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:29:7-32:23
+action#android.intent.action.MAIN
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:30:9-60
+	android:name
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:30:17-58
+category#android.intent.category.LAUNCHER
+ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:31:9-68
+	android:name
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml:31:19-66
+uses-sdk
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+MERGED from [:video_player] /home/amir/development/VideoPlayer/example/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:video_player] /home/amir/development/VideoPlayer/example/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:e2e] /home/amir/development/VideoPlayer/example/build/e2e/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:e2e] /home/amir/development/VideoPlayer/example/build/e2e/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:video_player_web] /home/amir/development/VideoPlayer/example/build/video_player_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:video_player_web] /home/amir/development/VideoPlayer/example/build/video_player_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/02c107d4c4df34a0e6813d667c6a5b57/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/02c107d4c4df34a0e6813d667c6a5b57/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/5900f64fca4216fb3438886c685fe99c/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/5900f64fca4216fb3438886c685fe99c/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/bc5320f6e4ea954b5e6a679761001302/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/bc5320f6e4ea954b5e6a679761001302/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/4ad6b3bb7a3af43916c33ab1fbe38a46/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/4ad6b3bb7a3af43916c33ab1fbe38a46/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/c7fce76c70c1c0bea31510c8266e1c4d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/c7fce76c70c1c0bea31510c8266e1c4d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/f28e5403cae781986b1aae4f37ef0b91/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/f28e5403cae781986b1aae4f37ef0b91/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/319b495517670e59f4fc0c8c7ca7a0f2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/319b495517670e59f4fc0c8c7ca7a0f2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/73a44782065f9670e7e84265811836f5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/73a44782065f9670e7e84265811836f5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/42aa1f12f57d01d15df068bc2c10a042/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/42aa1f12f57d01d15df068bc2c10a042/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/4bf1dcf603a13f7da150d8c90237a2c7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/4bf1dcf603a13f7da150d8c90237a2c7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.test:rules:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/rules-1.2.0.aar/55cccf90936b43286d3d6dcc004a91db/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:rules:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/rules-1.2.0.aar/55cccf90936b43286d3d6dcc004a91db/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/espresso-core-3.2.0.aar/62bb3342677463dcb1ceabf82f3f5961/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/espresso-core-3.2.0.aar/62bb3342677463dcb1ceabf82f3f5961/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:runner:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/runner-1.2.0.aar/3da3b8277ec86c113e44421496924f3f/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:runner:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/runner-1.2.0.aar/3da3b8277ec86c113e44421496924f3f/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/8f49a045bbd62e288eeb7006435eec4e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/amir/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/8f49a045bbd62e288eeb7006435eec4e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/bc751dba5334d91e8374154559d4c72b/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/bc751dba5334d91e8374154559d4c72b/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/monitor-1.2.0.aar/0f70a365cd8d51501d52125e6bc39132/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/monitor-1.2.0.aar/0f70a365cd8d51501d52125e6bc39132/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/917c5d444d005bd4caa283658a276ab7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/amir/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/917c5d444d005bd4caa283658a276ab7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-hls-2.9.6.aar/d0b286f0fa67d05938aad0be0e6ca5d1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-hls-2.9.6.aar/d0b286f0fa67d05938aad0be0e6ca5d1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-dash-2.9.6.aar/6e0df0a888d7032be7f6e47483870b78/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-dash-2.9.6.aar/6e0df0a888d7032be7f6e47483870b78/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-smoothstreaming-2.9.6.aar/c78f66f42cb4e2baf0d3eb44087c22a2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-smoothstreaming-2.9.6.aar/c78f66f42cb4e2baf0d3eb44087c22a2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-core-2.9.6.aar/4d57f87bc624f9cefaf3f6b73ba23336/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-core-2.9.6.aar/4d57f87bc624f9cefaf3f6b73ba23336/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/espresso-idling-resource-3.2.0.aar/26a882636b5a11ce115acedd5f0f74f3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/amir/.gradle/caches/transforms-1/files-1.1/espresso-idling-resource-3.2.0.aar/26a882636b5a11ce115acedd5f0f74f3/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/amir/development/VideoPlayer/example/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.exoplayer:exoplayer-core:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-core-2.9.6.aar/4d57f87bc624f9cefaf3f6b73ba23336/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [com.google.android.exoplayer:exoplayer-core:2.9.6] /home/amir/.gradle/caches/transforms-1/files-1.1/jetified-exoplayer-core-2.9.6.aar/4d57f87bc624f9cefaf3f6b73ba23336/AndroidManifest.xml:24:22-76

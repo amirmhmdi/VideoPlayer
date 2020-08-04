@@ -1,0 +1,19 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml:1:1-3:12
+INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml:1:1-3:12
+INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml:1:1-3:12
+	package
+		ADDED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml:2:3-48
+		INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml
+		INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml
+INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml
+		ADDED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml
+		INJECTED from /home/amir/development/flutter/.pub-cache/git/plugins-e33cffc6f145bba666cd8e4abcc931bab52f72b1/packages/video_player/video_player_web/android/src/main/AndroidManifest.xml
