@@ -219,8 +219,10 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
     super.initState();
     print("before controller");
     _controller = VideoPlayerController.network(
-      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
+      "http://meshkan.com/api/internal/cdb/contents/20d3e193-41fc-4c97-8a41-2fd7f5cc854d/0/4479934",
+      // 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
       // "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4",
+      // "http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4"
       // closedCaptionFile: _loadCaptions(),
     );
 

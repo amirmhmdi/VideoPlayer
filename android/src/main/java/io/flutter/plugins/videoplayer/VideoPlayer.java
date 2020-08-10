@@ -49,7 +49,6 @@ import java.util.Map;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.upstream.DefaultAllocator;
 
-
 final class VideoPlayer {
   private static final String FORMAT_SS = "ss";
   private static final String FORMAT_DASH = "dash";
@@ -68,7 +67,6 @@ final class VideoPlayer {
 
   private boolean isInitialized = false;
 
-
   // Minimum Video you want to buffer while Playing
   public static final int MIN_BUFFER_DURATION = 3000;
   // Max Video you want to buffer during PlayBack
@@ -78,52 +76,32 @@ final class VideoPlayer {
   // Min video You want to buffer when user resumes video
   public static final int MIN_PLAYBACK_RESUME_BUFFER = 2000;
 
-  VideoPlayer(
-      Context context,
-      EventChannel eventChannel,
-      TextureRegistry.SurfaceTextureEntry textureEntry,
-      String dataSource,
-      String formatHint,
-      int maxCacheSize,
-      int maxCacheFileSize,
-      boolean useCache,
-      Result result) {
+  VideoPlayer(Context context, EventChannel eventChannel, TextureRegistry.SurfaceTextureEntry textureEntry,
+      String dataSource, String formatHint, int maxCacheSize, int maxCacheFileSize, boolean useCache, Result result) {
     this.eventChannel = eventChannel;
     this.textureEntry = textureEntry;
     System.out.println("\nJAAAAAAAAAAAAAAAAAAAAAAAVA\n");
 
     TrackSelector trackSelector = new DefaultTrackSelector();
-    //added by amir to reduce buffer size
-    DefaultLoadControl loadControl = 
-                new DefaultLoadControl.Builder()
-                      .setAllocator(new DefaultAllocator(true, 16))
-                      .setBufferDurationsMs(
-                            MIN_BUFFER_DURATION,
-                            MAX_BUFFER_DURATION,
-                            MIN_PLAYBACK_START_BUFFER,
-                            MIN_PLAYBACK_RESUME_BUFFER
-                      ).setTargetBufferBytes(100)
-                      .setPrioritizeTimeOverSizeThresholds(true)
-                      .createDefaultLoadControl();
+    // added by amir to reduce buffer size
+    DefaultLoadControl loadControl = new DefaultLoadControl.Builder().setAllocator(new DefaultAllocator(true, 64))
+        .setBufferDurationsMs(MIN_BUFFER_DURATION, MAX_BUFFER_DURATION, MIN_PLAYBACK_START_BUFFER,
+            MIN_PLAYBACK_RESUME_BUFFER)
+        .setTargetBufferBytes(-1).setPrioritizeTimeOverSizeThresholds(false).createDefaultLoadControl();
 
     System.out.println("loadControl");
     System.out.println(loadControl.toString());
-    exoPlayer = ExoPlayerFactory.newSimpleInstance(context, trackSelector , loadControl );
+    exoPlayer = ExoPlayerFactory.newSimpleInstance(context, trackSelector, loadControl);
     System.out.println("exoPlayer123");
     Uri uri = Uri.parse(dataSource);
 
     DataSource.Factory dataSourceFactory;
     if (isHTTP(uri)) {
-      dataSourceFactory =
-          new DefaultHttpDataSourceFactory(
-              "ExoPlayer",
-              null,
-              DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
-              DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
-              true);
+      dataSourceFactory = new DefaultHttpDataSourceFactory("ExoPlayer", null,
+          DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS, DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
+          true);
       if (useCache && maxCacheSize > 0 && maxCacheFileSize > 0) {
-        dataSourceFactory =
-            new CacheDataSourceFactory(context, maxCacheSize, maxCacheFileSize, dataSourceFactory);
+        dataSourceFactory = new CacheDataSourceFactory(context, maxCacheSize, maxCacheFileSize, dataSourceFactory);
       }
     } else {
       dataSourceFactory = new DefaultDataSourceFactory(context, "ExoPlayer");
@@ -205,20 +183,7 @@ final class VideoPlayer {
       exoPlayer.setVideoSurface(surface);
       setAudioAttributes(exoPlayer);
     } catch (Exception e) {
-      
-    }
-    
 
-    while (surface == null) {
-      System.out.println("surface == null++++++++++++++++++++++++");
-      try {
-        surface = new Surface(textureEntry.surfaceTexture());
-        exoPlayer.setVideoSurface(surface);
-        setAudioAttributes(exoPlayer);
-      } catch (Exception e) {
-
-      }
-      
     }
 
     exoPlayer.addListener(new EventListener() {
@@ -237,6 +202,16 @@ final class VideoPlayer {
           event.put("event", "completed");
           eventSink.success(event);
         }
+      }
+
+      @Override
+      public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+        if (mediaPlayer != null) {
+          mediaPlayer.stop();
+          mediaPlayer.release();
+          mediaPlayer = null;
+        }
+        return true;
       }
 
       @Override

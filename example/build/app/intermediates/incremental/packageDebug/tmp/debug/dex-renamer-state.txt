@@ -1,4 +1,4 @@
-#Tue Aug 04 16:26:50 IRDT 2020
+#Wed Aug 05 08:58:26 IRDT 2020
 base.0=/home/amir/development/VideoPlayer/example/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
