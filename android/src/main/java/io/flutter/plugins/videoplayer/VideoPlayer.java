@@ -178,13 +178,19 @@ final class VideoPlayer {
       }
     });
 
-    try {
-      surface = new Surface(textureEntry.surfaceTexture());
-      exoPlayer.setVideoSurface(surface);
-      setAudioAttributes(exoPlayer);
-    } catch (Exception e) {
-
+    surface = new Surface(textureEntry.surfaceTexture());
+    if (surface == null) {
+      System.out.println("\nSurface nullllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll\n");
+      surface = false;
     }
+    try {
+      exoPlayer.setVideoSurface(surface);
+    } catch (Exception e) {
+      System.out.println("Surface errrrror");
+      System.out.println("eeeeeexception" + e);
+      return 0;
+    }
+    setAudioAttributes(exoPlayer);
 
     exoPlayer.addListener(new EventListener() {
 
@@ -202,16 +208,6 @@ final class VideoPlayer {
           event.put("event", "completed");
           eventSink.success(event);
         }
-      }
-
-      @Override
-      public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-        if (mediaPlayer != null) {
-          mediaPlayer.stop();
-          mediaPlayer.release();
-          mediaPlayer = null;
-        }
-        return true;
       }
 
       @Override
