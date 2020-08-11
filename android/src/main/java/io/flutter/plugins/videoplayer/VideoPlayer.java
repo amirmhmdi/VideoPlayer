@@ -181,14 +181,14 @@ final class VideoPlayer {
     surface = new Surface(textureEntry.surfaceTexture());
     if (surface == null) {
       System.out.println("\nSurface nullllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll\n");
-      surface = false;
+      // surface = false;
     }
     try {
       exoPlayer.setVideoSurface(surface);
     } catch (Exception e) {
       System.out.println("Surface errrrror");
       System.out.println("eeeeeexception" + e);
-      return 0;
+      // return 0;
     }
     setAudioAttributes(exoPlayer);
 

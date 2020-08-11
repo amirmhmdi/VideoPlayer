@@ -1,8 +1,8 @@
 package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
-import dev.flutter.plugins.e2e.E2EPlugin;
 import io.flutter.plugins.videoplayer.VideoPlayerPlugin;
+import dev.flutter.plugins.e2e.E2EPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -12,8 +12,8 @@ public final class GeneratedPluginRegistrant {
     if (alreadyRegisteredWith(registry)) {
       return;
     }
-    E2EPlugin.registerWith(registry.registrarFor("dev.flutter.plugins.e2e.E2EPlugin"));
     VideoPlayerPlugin.registerWith(registry.registrarFor("io.flutter.plugins.videoplayer.VideoPlayerPlugin"));
+    E2EPlugin.registerWith(registry.registrarFor("dev.flutter.plugins.e2e.E2EPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {
